@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.bootcampsqlite.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.bootcampsqlite.fragment.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_secondFragment_to_ijtimoiyFragment"
+            app:destination="@id/ijtimoiyFragment" />
+        <action
+            android:id="@+id/action_secondFragment_to_dunyoFragment"
+            app:destination="@id/dunyoFragment" />
+        <action
+            android:id="@+id/action_secondFragment_to_asosiyFragment"
+            app:destination="@id/asosiyFragment" />
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/asosiyFragment"
+        android:name="com.example.bootcampsqlite.fragment.viewpager.AsosiyFragment"
+        android:label="fragment_asosiy"
+        tools:layout="@layout/fragment_asosiy">
+        <action
+            android:id="@+id/action_asosiyFragment_to_blankFragment"
+            app:destination="@id/blankFragment" />
+        <action
+            android:id="@+id/action_asosiyFragment_to_editDialogFragment"
+            app:destination="@id/editDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dunyoFragment"
+        android:name="com.example.bootcampsqlite.fragment.viewpager.DunyoFragment"
+        android:label="fragment_dunyo"
+        tools:layout="@layout/fragment_dunyo">
+        <action
+            android:id="@+id/action_dunyoFragment_to_blankFragment"
+            app:destination="@id/blankFragment" />
+        <action
+            android:id="@+id/action_dunyoFragment_to_editDialogFragment"
+            app:destination="@id/editDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ijtimoiyFragment"
+        android:name="com.example.bootcampsqlite.fragment.viewpager.IjtimoiyFragment"
+        android:label="fragment_ijtimoiy"
+        tools:layout="@layout/fragment_ijtimoiy">
+        <action
+            android:id="@+id/action_ijtimoiyFragment_to_blankFragment"
+            app:destination="@id/blankFragment" />
+        <action
+            android:id="@+id/action_ijtimoiyFragment_to_editDialogFragment"
+            app:destination="@id/editDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/addFragment"
+        android:name="com.example.bootcampsqlite.fragment.dialog.AddFragment"
+        android:label="AddFragment">
+        <action
+            android:id="@+id/action_addFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.example.bootcampsqlite.fragment.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" >
+        <action
+            android:id="@+id/action_blankFragment_to_editDialogFragment"
+            app:destination="@id/editDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editDialogFragment"
+        android:name="com.example.bootcampsqlite.fragment.dialog.EditDialogFragment"
+        android:label="fragment_edit_dialog"
+        tools:layout="@layout/fragment_edit_dialog" />
+</navigation>
